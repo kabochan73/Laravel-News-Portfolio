@@ -25,7 +25,7 @@ export default function ArticleList({ articles }: { articles: Article[] }) {
     <div className="flex gap-6 p-6 max-w-6xl mx-auto w-full">
       {/* Article cards (3/4) */}
       <main className="flex-3">
-        <p className="text-sm text-zinc-500 mb-4">{filtered.length} 件</p>
+        {/* <p className="text-sm text-zinc-500 mb-4">{filtered.length} 件</p> */}
         {filtered.length === 0 ? (
           <p className="text-zinc-400">記事が見つかりませんでした。</p>
         ) : (
@@ -33,7 +33,7 @@ export default function ArticleList({ articles }: { articles: Article[] }) {
             {filtered.map((article) => (
               <li
                 key={article.id}
-                className="rounded-lg border border-zinc-200 bg-white p-5 shadow-sm"
+                className="rounded-lg border border-zinc-200 bg-white p-5 shadow-sm transition-all duration-200 hover:shadow-md hover:-translate-y-1"
               >
                 <a
                   href={article.url}
