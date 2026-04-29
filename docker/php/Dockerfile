@@ -19,4 +19,9 @@ WORKDIR /var/www/html
 RUN useradd -m -u 1000 laravel \
     && chown -R laravel:laravel /var/www/html
 
+COPY entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+
 USER laravel
+
+ENTRYPOINT ["/entrypoint.sh"]
