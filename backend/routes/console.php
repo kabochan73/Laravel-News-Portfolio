@@ -8,4 +8,4 @@ Artisan::command('inspire', function () {
     $this->comment(Inspiring::quote());
 })->purpose('Display an inspiring quote');
 
-Schedule::command('articles:fetch')->twoDays();
+Schedule::command('articles:fetch')->cron('0 0 */2 * *');
