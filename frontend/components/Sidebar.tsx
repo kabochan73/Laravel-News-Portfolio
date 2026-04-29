@@ -34,34 +34,32 @@ export default function Sidebar({
         <h2 className="text-sm font-semibold text-zinc-500 uppercase tracking-wide mb-2">
           タグ
         </h2>
-        <ul className="space-y-1">
-          <li>
+        <div className="flex flex-wrap gap-2">
+          <button
+            onClick={() => onTagChange("")}
+            className={`rounded-full px-3 py-1 text-xs transition-colors ${
+              selectedTag === ""
+                ? "bg-zinc-900 text-white"
+                : "bg-zinc-100 text-zinc-600 hover:bg-zinc-200 hover:-translate-y-0.5"
+            }`}
+          >
+            すべて
+          </button>
+          {allTags.map((tag) => (
             <button
-              onClick={() => onTagChange("")}
-              className={`w-full text-left px-2 py-1 rounded text-sm transition-colors ${
-                selectedTag === ""
+              key={tag}
+              onClick={() => onTagChange(tag === selectedTag ? "" : tag)}
+              className={`rounded-full px-3 py-1 text-xs transition-colors ${
+                selectedTag === tag
                   ? "bg-zinc-900 text-white"
-                  : "text-zinc-700 hover:bg-zinc-100"
+                  : "bg-zinc-100 text-zinc-600 hover:bg-zinc-300 hover:-translate-y-0.5"
               }`}
             >
-              すべて
+              {tag}
             </button>
-          </li>
-          {allTags.map((tag) => (
-            <li key={tag}>
-              <button
-                onClick={() => onTagChange(tag === selectedTag ? "" : tag)}
-                className={`w-full text-left px-2 py-1 rounded text-sm transition-colors ${
-                  selectedTag === tag
-                    ? "bg-zinc-900 text-white"
-                    : "text-zinc-700 hover:bg-zinc-100"
-                }`}
-              >
-                {tag}
-              </button>
-            </li>
           ))}
-        </ul>
+        </div>
+
       </div>
     </aside>
   );
