@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Http;
 class QiitaService
 {
     private const BASE_URL = 'https://qiita.com/api/v2';
-    private const PER_PAGE = 10;
+    private const PER_PAGE = 20;
     private const TAG = 'laravel';
 
     public function fetchArticles(): array
