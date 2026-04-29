@@ -9,15 +9,22 @@ QiitaのLaravel記事を自動収集・AI要約して表示するビューアー
 正確にはAPIを使ってるので、スクレイピングではないですが。AI要約機能は、設計してる時に相性がいいと思い実装してみました。思いの外簡単ですごく便利で入れて良かったと思っています。  
 ログイン機能は実装しても大した恩恵がないと判断して省きました。その結果DBもファイルもスッキリしたので、とても満足しています。
 
+## デプロイ先
+
+| サービス         | URL                                                                                      |
+| ---------------- | ---------------------------------------------------------------------------------------- |
+| バックエンド API | https://laravel-news-portfoloi-backend-main-lcocgq.laravel.cloud/api/articles           |
+| フロントエンド   | （Vercelデプロイ後に追記）                                                               |
+
 ## 技術スタック
 
 | レイヤー       | 技術                                   |
 | -------------- | -------------------------------------- |
-| フロントエンド | Next.js 16 / TypeScript / Tailwind CSS |
+| フロントエンド | Next.js 16 / TypeScript / Tailwind CSS / Node.js 25 |
 | バックエンド   | Laravel 13 / PHP 8.4                   |
 | AI             | Claude API（Anthropic）                |
-| DB             | MySQL 8.0                              |
-| インフラ       | Docker / Nginx                         |
+| DB             | PostgreSQL 18                          |
+| インフラ       | Docker / Nginx / Laravel Cloud / Vercel |
 
 ## 機能
 
@@ -77,9 +84,9 @@ docker compose exec app php artisan articles:fetch
 [cron] → articles:fetch (2日おき)
     ├─ QiitaService  → Qiita API（20件取得）
     ├─ ClaudeService → Claude API（新規記事のみ要約）
-    └─ Article::create() → MySQL
+    └─ Article::create() → PostgreSQL
 
-[Next.js page.tsx] → GET /api/articles → MySQL
+[Next.js page.tsx] → GET /api/articles → PostgreSQL
     └─ ArticleList.tsx（クライアント）
           ├─ キーワード検索
           ├─ タグフィルタリング
