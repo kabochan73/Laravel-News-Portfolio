@@ -45,6 +45,8 @@ services:
     environment:
       - API_URL=http://nginx
       - NEXT_PUBLIC_API_URL=http://localhost:8080
+    depends_on:
+      - nginx
     networks:
       - app-network
 
