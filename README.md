@@ -11,20 +11,20 @@ QiitaのLaravel記事を自動収集・AI要約して表示するビューアー
 
 ## デプロイ先
 
-| サービス         | URL                                                                                      |
-| ---------------- | ---------------------------------------------------------------------------------------- |
-| バックエンド API | https://laravel-news-portfoloi-backend-main-lcocgq.laravel.cloud/api/articles           |
-| フロントエンド   | （Vercelデプロイ後に追記）                                                               |
+| サービス         | URL                                                                           |
+| ---------------- | ----------------------------------------------------------------------------- |
+| バックエンド API | https://laravel-news-portfoloi-backend-main-lcocgq.laravel.cloud/api/articles |
+| フロントエンド   | https://laravel-news-portfolio-frontend.vercel.app                            |
 
 ## 技術スタック
 
-| レイヤー       | 技術                                   |
-| -------------- | -------------------------------------- |
+| レイヤー       | 技術                                                |
+| -------------- | --------------------------------------------------- |
 | フロントエンド | Next.js 16 / TypeScript / Tailwind CSS / Node.js 25 |
-| バックエンド   | Laravel 13 / PHP 8.4                   |
-| AI             | Claude API（Anthropic）                |
-| DB             | PostgreSQL 18                          |
-| インフラ       | Docker / Nginx / Laravel Cloud / Vercel |
+| バックエンド   | Laravel 13 / PHP 8.5                                |
+| AI             | Claude API（Anthropic）                             |
+| DB             | PostgreSQL 18                                       |
+| インフラ       | Docker / Nginx / Laravel Cloud / Vercel             |
 
 ## 機能
 
