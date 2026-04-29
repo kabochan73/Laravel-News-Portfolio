@@ -13,7 +13,7 @@ QiitaのLaravel記事を自動収集・AI要約して表示するビューアー
 
 | サービス         | URL                                                                           |
 | ---------------- | ----------------------------------------------------------------------------- |
-| バックエンド API | https://laravel-news-portfoloi-backend-main-lcocgq.laravel.cloud/api/articles |
+| バックエンド API | https://laravel-news-portfoloi-backend-main-lcocgq.laravel.cloud |
 | フロントエンド   | https://laravel-news-portfolio-frontend.vercel.app                            |
 
 ## 技術スタック
